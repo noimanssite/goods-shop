@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>결제 결과 · 굿즈샵</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#3182f6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="turingshop">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+</head>
+<body>
+  <header class="app-header">
+    <a href="index.html" class="logo">굿즈샵</a>
+    <nav id="nav-auth"></nav>
+  </header>
+  <main class="main-narrow">
+    <div class="page-head">
+      <h1>결제 결과</h1>
+    </div>
+    <div id="status">결제를 확인하는 중입니다...</div>
+    <div id="result" hidden></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/success.js"></script>
+  <script src="js/sw-register.js"></script>
+  <script src="js/install-prompt.js"></script>
+</body>
+</html>

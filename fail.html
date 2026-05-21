@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>결제 실패 · 굿즈샵</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#3182f6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="turingshop">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+</head>
+<body>
+  <header class="app-header">
+    <a href="index.html" class="logo">굿즈샵</a>
+    <nav id="nav-auth"></nav>
+  </header>
+  <main class="main-narrow">
+    <div class="page-head">
+      <h1>결제 실패</h1>
+      <p class="sub">결제가 정상적으로 완료되지 않았어요.</p>
+    </div>
+    <div class="alert" id="msg"></div>
+    <p style="margin-top:var(--space-4)"><a href="index.html" class="btn">상품 목록으로 돌아가기</a></p>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/nav.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.nav.renderHeader();
+      const params = new URLSearchParams(location.search);
+      const code = params.get('code') || 'UNKNOWN';
+      const message = params.get('message') || '알 수 없는 오류가 발생했습니다.';
+      document.getElementById('msg').textContent = `[${code}] ${message}`;
+    });
+  </script>
+  <script src="js/sw-register.js"></script>
+  <script src="js/install-prompt.js"></script>
+</body>
+</html>
