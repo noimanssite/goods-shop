@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>굿즈샵 · 매일을 특별하게 채우는 큐레이션</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#3182f6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="turingshop">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+</head>
+<body>
+  <header class="app-header">
+    <a href="index.html" class="logo">굿즈샵</a>
+    <nav id="nav-auth"></nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">SINCE 2026 · 큐레이션 굿즈 셀렉트샵</span>
+      <h1 class="hero-title">당신의 하루에<br>설렘을 더하다.</h1>
+      <p class="hero-sub">침구부터 도어 행거, 생활 소품까지<br>매일 쓰는 물건이 취향이 되는 곳.</p>
+      <a href="#products" class="hero-cta">구경하러 가기</a>
+      <div>
+        <button type="button" class="btn btn-secondary">장바구니 담기</button>
+        <button type="button" class="btn">바로 구매</button>
+        <button type="button" class="btn btn-link">취소</button>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="section-head">
+      <h2>인기 상품</h2>
+      <span class="meta">지금 잘 나가는 굿즈</span>
+    </div>
+    <div class="grid products" id="popular-grid"></div>
+
+    <div class="section-head" id="products">
+      <h2>전체 상품</h2>
+      <span class="meta" id="product-count"></span>
+    </div>
+    <div id="error-banner" class="alert" hidden></div>
+    <div class="grid products" id="product-grid"></div>
+    <div class="empty-state" id="empty" hidden>상품이 없습니다.</div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/sw-register.js"></script>
+  <script src="js/install-prompt.js"></script>
+</body>
+</html>
